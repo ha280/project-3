@@ -1,0 +1,80 @@
+.btn{
+		&:link,
+		&:visited{
+			display: inline-block;
+			padding: 15px 40px;
+				 border-radius: 100px;
+			font-weight: 300;
+			text-decoration: none;
+		   transition: all .2s;
+			position: relative;
+
+		}
+		&:active{
+			transform: translateY(-1px);
+				box-shadow: 0 10px 20px rgba($color-black,0.2);
+
+		}
+		&:hover{
+			transform: translateY(-3px);
+			box-shadow: 0 10px 20px rgba($color-black,0.2);
+			&::after{
+			transform: scale(1.5);
+			opacity: 0;
+		}
+		}
+		&::after{
+			content: "";
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			border-radius: 100px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			transition: all .4s;
+		}
+	
+		&-green{
+			color: $color-black;
+			text-align: center;
+			background-color: $color-Dark-green;
+
+			&::after{
+			background-color: $color-Dark-green;
+		}
+		}
+		&-white{
+			color: $color-black;
+			text-align: center;
+			background-color: $color-white;
+			
+			&::after{
+			background-color: $color-white;
+		}
+	}
+		&-animated{
+				animation: moveInBottom .5s ease-out .75s;
+			animation-fill-mode: backwards;
+		}
+}
+.btn-learn{
+	color: $color-Light-green;
+	text-decoration: underline;
+	font-size: 1.6rem;
+	padding: 3px;
+	display: inline-block;
+
+	&:hover{
+		background-color: $color-Light-green;
+		color: $color-white;
+		text-decoration: none;
+		box-shadow: 0 1rem 2rem rgba($color-black, .15) ; 
+		transform: translateY(-2px);
+	}
+	&::active{
+		box-shadow: 0 .5rem 1rem rgba($color-black, .15) ; 
+		transform: translateY(0);
+	}
+}
